@@ -75,4 +75,53 @@ class Program
 }
 
 /// Practice 4. Processing Astronaut Exploration Data
+public class Program
+{
+    public static void Main()
+    {
+        // This function processes astronaut names and planets from a string 
+        // then prints out a neat summary of who is exploring which planet.
+        void ProcessAstronautData(string data)
+        {
+            string[] astronautDetails = data.Split(';');
+            for (int i = 0; i < astronautDetails.Length; i++)
+            {
+                // TODO: Extract the astronaut name and explored planet from the detail, strip away the whitespace.
+                astronautDetails[i] = astronautDetails[i].Trim();
+                string[] nameAndPlanet = astronautDetails[i].Split("-");
+                // TODO: Print the statement in the format "Astronaut [name] is exploring [planet]."
+                Console.WriteLine($"Astronaut {nameAndPlanet[0]} is exploring {nameAndPlanet[1]}.");
+            }
+        }
+
+        // String containing astronaut names and planets, separated by semicolons.
+        // Each astronaut-planet pair is separated by a dash.
+        string astronautData = "    Neil-Mars; Buzz-Jupiter; Sally-Venus    ";
+        ProcessAstronautData(astronautData);
+    }
+}
+
 /// Practice 5. Processing Space Exploration Crew Members' Data
+class Program
+{
+    static void Main()
+    {
+        // Space exploration crew members' data, containing their names, missions, and roles
+        string crewData = "Neil,Armstrong,Apollo 11,C;Buzz,Aldrin,Apollo 11,P;Michael,Collins,Apollo 11,CM";
+        
+        // TODO: Split the crewData string into an array of individual crew member information using the appropriate delimiter
+        string[] crewMemberData = crewData.Split(";");
+        
+        // TODO: Iterate over the array of crew member data
+        for(int i = 0; i < crewMemberData.Length; i++){
+            // TODO: For each member, split their data string using commas as delimiters
+            string[] crewMemberDetails = crewMemberData[i].Split(",");
+            // TODO: Print the crew member's details in a formatted string
+            Console.WriteLine($"{crewMemberDetails[0]} {crewMemberDetails[1]} {crewMemberDetails[2]} {crewMemberDetails[3]}");
+        }
+        // Expected output:
+        // Neil Armstrong Apollo 11 C
+        // Buzz Aldrin Apollo 11 P
+        // Michael Collins Apollo 11 CM
+    }
+}
